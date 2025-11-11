@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Contactos</title>
+</head>
+<body>
+    <h1>Contactos Guardados</h1>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+        </tr>
+        <tr th:each="contacto : ${contactos}">
+            <td th:text="${contacto.id}"></td>
+            <td th:text="${contacto.nombre}"></td>
+            <td th:text="${contacto.telefono}"></td>
+        </tr>
+    </table>
+
+    <br>
+    <a th:href="@{/}">Volver al formulario</a>
+</body>
+</html>
