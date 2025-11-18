@@ -1,0 +1,31 @@
+<div th:fragment="contenido">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card p-4 shadow-lg bg-light text-dark">
+                <h2 class="text-center mb-4">Editar Contacto</h2>
+
+                <form th:action="@{/actualizar}" th:object="${agenda}" method="post">
+
+                    <input type="hidden" th:field="*{id}">
+
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" th:field="*{nombre}" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Teléfono</label>
+                        <input type="text" th:field="*{telefono}" class="form-control" required>
+                    </div>
+
+                    <button class="btn btn-primary w-100">
+                        <i class="bi bi-arrow-repeat"></i> Actualizar
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

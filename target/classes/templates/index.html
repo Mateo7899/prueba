@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Agenda - Nuevo Contacto</title>
-</head>
-<body>
-    <h1>Agregar Contacto</h1>
-    <form th:action="@{/guardar}" th:object="${agenda}" method="post">
-        <label>Nombre:</label>
-        <input type="text" th:field="*{nombre}" required /><br/><br/>
-        <label>Teléfono:</label>
-        <input type="text" th:field="*{telefono}" required /><br/><br/>
-        <button type="submit">Guardar</button>
-    </form>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="base :: content">
 
-    <br>
-    <a th:href="@{/listar}">Ver lista de contactos</a>
+<div>
+    <h1 class="text-center">Bienvenido a tu Agenda</h1>
+    <p class="text-center">Administra tus contactos de forma rápida y sencilla.</p>
+
+    <div class="text-center mt-4">
+        <a href="/listar" class="btn btn-dark btn-lg">Ver contactos</a>
+        <a href="/nuevo" class="btn btn-outline-dark btn-lg">Agregar nuevo</a>
+    </div>
+</div>
+
+</html>
+
+
 </body>
 </html>
+

@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Contactos</title>
-</head>
-<body>
-    <h1>Contactos Guardados</h1>
+<html xmlns:thy="http://www.thymeleaf.org"
+      th:replace="base :: content">
 
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Teléfono</th>
-        </tr>
-        <tr th:each="contacto : ${contactos}">
-            <td th:text="${contacto.id}"></td>
-            <td th:text="${contacto.nombre}"></td>
-            <td th:text="${contacto.telefono}"></td>
-        </tr>
+<div>
+    <h2 class="text-center mb-4">Lista de Contactos</h2>
+
+    <table class="table table-hover table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="a : ${agenda}">
+                <td th:text="${a.id}"></td>
+                <td th:text="${a.nombre}"></td>
+                <td th:text="${a.telefono}"></td>
+            </tr>
+        </tbody>
     </table>
 
-    <br>
-    <a th:href="@{/}">Volver al formulario</a>
-</body>
+    <div class="text-end mt-3">
+        <a href="/nuevo" class="btn btn-primary">Agregar contacto</a>
+    </div>
+</div>
+
 </html>
+

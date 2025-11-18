@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Agenda App</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #eef2f3, #8e9eab);
+            min-height: 100vh;
+            margin: 0;
+        }
+        .navbar {
+            background-color: #1f2937 !important;
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+        }
+        .container-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #333;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">Agenda</a>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="/" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="/listar" class="nav-link">Listar contactos</a></li>
+                    <li class="nav-item"><a href="/nuevo" class="nav-link">Nuevo contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <div class="container-box">
+            <th:block th:replace="${content}"></th:block>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Agenda App — Desarrollado con Spring Boot + Thymeleaf
+    </footer>
+
+</body>
+</html>
+
